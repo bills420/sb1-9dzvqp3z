@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 15% 7%;
+    --foreground: 180 5% 98%;
+    --card: 180 15% 9%;
+    --card-foreground: 180 5% 98%;
+    --popover: 180 15% 9%;
+    --popover-foreground: 180 5% 98%;
+    --primary: 180 70% 40%;
+    --primary-foreground: 180 5% 98%;
+    --secondary: 180 15% 12%;
+    --secondary-foreground: 180 70% 40%;
+    --muted: 180 15% 12%;
+    --muted-foreground: 180 5% 63.9%;
+    --accent: 180 30% 14.9%;
+    --accent-foreground: 180 70% 40%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 180 5% 98%;
+    --border: 180 15% 14.9%;
+    --input: 180 15% 14.9%;
+    --ring: 180 70% 40%;
+    --chart-1: 180 70% 50%;
+    --chart-2: 180 60% 45%;
+    --chart-3: 180 80% 55%;
+    --chart-4: 180 65% 60%;
+    --chart-5: 180 75% 55%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, hsl(180 70% 40% / 0.15), transparent 70%);
+  z-index: -1;
+}
